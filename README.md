@@ -89,6 +89,14 @@ pip_import(
    requirements = "//path/to:requirements.txt",
 )
 
+# Python interpreter can be specified optionally to support a customized version,
+# such as "python3" or "python3.7"
+pip_import(
+   name = "my_deps",
+   requirements = "//path/to:requirements.txt",
+   python_interpreter = 'python3.7',
+)
+
 # Load the pip_install symbol for my_deps, and create the dependencies'
 # repositories.
 load("@my_deps//:requirements.bzl", "pip_install")
